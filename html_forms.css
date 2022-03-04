@@ -1,0 +1,23 @@
+body {
+    background : url(background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form_align {
+    margin-left: 25%;
+}
+
+.submit_btn {
+    margin-left: 42%;
+}
+
+.cls_int {
+    position: relative;
+}
+
+.btn_int {
+    position: absolute;
+    right: -50px;
+    top: 32px;
+}
