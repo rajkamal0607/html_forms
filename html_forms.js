@@ -10,18 +10,18 @@ function inputData()
         <label for="exampleInputInterest" class="form-label fw-bold">Interest</label>
         <input type="text" class="form-control" required placeholder="Enter Interest">
         <button type="button" onclick="inputData()" name="interest" class="btn btn-dark btn_int">+</button>
-        <button type="button" onclick="minusData()" class="btn btn-dark btn_int_rmv">-</button>
+        <button type="button" style="position: absolute;right: -90px;top: 32px;" onclick="minusData()" class="btn btn-dark">-</button>
         </div>
         </div>`;
     }
     else {
-        $('#spanMinus').html('<button type="button" onclick="minusData()" class="btn btn-dark btn_int_rmv">-</button>');
+        $('#spanMinus').html('<button type="button" style="position: absolute;right: -90px;top: 32px;" onclick="minusData()" class="btn btn-dark">-</button>');
         add = `<div class="mb-3 cls_int">
         <div id="removeField">
         <label for="exampleInputInterest" class="form-label fw-bold">Interest</label>
         <input type="text" class="form-control" required placeholder="Enter Interest">
         <button type="button" onclick="inputData()" name="interest" class="btn btn-dark btn_int">+</button>
-        <button type="button" onclick="minusData()" class="btn btn-dark btn_int_rmv">-</button>
+        <button type="button" style="position: absolute;right: -90px;top: 32px;" onclick="minusData()" class="btn btn-dark">-</button>
         </div>
         </div>`;
     }
