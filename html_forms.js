@@ -1,19 +1,42 @@
-$(document).ready(function() {
-var max_fields      = 100; //maximum input boxes allowed
-var wrapper   		= $("#InputInterest"); //Fields wrapper
-var add_button      = $("#btn_id"); //Add button ID
-    
-var x = 1; //initlal text box count
-$(add_button).click(function(e){ //on add input button click
-console.log("populating");
-e.preventDefault();
-    if(x < max_fields){ //max input box allowed
-        x++; //text box increment
-        $(wrapper).append('<div class="input-group mb-3" style = "position : relative;"><div><label for="exampleInputInterest" id="int_num" class="form-label fw-bold">Interest</label><input placeholder="Enter Interest" type="text" name="mytext[]" class="form-control"><div class="input-group-append"></div><button class="btn btn-dark remove_field" style = "position : absolute; left:220px; top:32px" type="button">-</button></div>'); //add input box
-    }
-});
+var count = 1;
+function inputData()
+{
+    count++;
+    console.log("Adding Fields");
+    if(count == 1) {
 
-$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-    e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
-    })
-});
+        add = `<div class="mb-3 cls_int">
+        <div id="removeField">
+        <label for="exampleInputInterest" class="form-label fw-bold">Interest</label>
+        <input type="text" class="form-control" required placeholder="Enter Interest">
+        <button type="button" onclick="inputData()" name="interest" class="btn btn-dark btn_int">+</button>
+        <button type="button" onclick="minusData()" class="btn btn-dark btn_int_rmv">-</button>
+        </div>
+        </div>`;
+    }
+    else {
+        $('#spanMinus').html('<button type="button" onclick="minusData()" class="btn btn-dark btn_int_rmv">-</button>');
+        add = `<div class="mb-3 cls_int">
+        <div id="removeField">
+        <label for="exampleInputInterest" class="form-label fw-bold">Interest</label>
+        <input type="text" class="form-control" required placeholder="Enter Interest">
+        <button type="button" onclick="inputData()" name="interest" class="btn btn-dark btn_int">+</button>
+        <button type="button" onclick="minusData()" class="btn btn-dark btn_int_rmv">-</button>
+        </div>
+        </div>`;
+    }
+
+    var add_btn = document.getElementById('InputInterest');
+    add_btn.innerHTML += add;
+
+}
+
+function minusData()
+{
+    var remove_fld = document.getElementById('removeField');
+    if(count == 2) {
+        $('#spanMinus').html('');
+    }
+    remove_fld.remove();
+    count-=1;
+}
