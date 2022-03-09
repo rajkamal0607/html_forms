@@ -21,3 +21,9 @@ body {
     right: -50px;
     top: 32px;
 }
+
+.btn_int_rmv {
+    position: absolute;
+    right: -90px;
+    top: 32px;
+}
